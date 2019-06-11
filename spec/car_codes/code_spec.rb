@@ -54,4 +54,18 @@ RSpec.describe CarCodes::Code do
     include_examples "ensures_validation", :fuel
   end
 
+  describe "#valid?" do
+    it "returns true when valid" do
+      expect(subject.valid?).to be true
+    end
+
+    context "when word is invalid" do
+      let(:word) { "1234" }
+
+      it "returns false" do
+        expect(subject.valid?).to be false
+      end
+    end
+  end
+
 end

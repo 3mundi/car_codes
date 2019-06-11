@@ -38,11 +38,11 @@ module CarCodes
     end
 
     def valid?
-      word.length == 4 &&
-      @category &&
-      @type &&
-      @transmission &&
-      @fuel
+      !!(word.length == 4 &&
+        @category &&
+        @type &&
+        @transmission &&
+        @fuel)
     end
 
     private
